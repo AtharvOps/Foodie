@@ -16,6 +16,16 @@
   </script>
   <link rel="icon" href="../imgs/favicon.png" type="image/png" />
 
+  <!-- Synchronous theme initialization to prevent FOUC -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+    })();
+  </script>
+
   <!-- CSS links -->
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/checkout.css" />
